@@ -20,6 +20,18 @@ export default {
                 test: /\.css$/i,
                 use: ["style-loader", "css-loader"],
             },
+            {
+                test: /\.html$/i,
+                use: ["html-loader"],
+            },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: "asset/resource",
+            }
         ],
+    },
+    devtool: "eval-source-map",
+    devServer: {
+        watchFiles: ["./src/template.html"],
     },
 };
